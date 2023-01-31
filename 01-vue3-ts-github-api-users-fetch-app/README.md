@@ -1,5 +1,8 @@
 # vue3_comoposition_api_typescript
 
+## About
+Vue3 composition API + TypeScript. Fetching data from github API
+
 ## Project setup
 ```
 npm install
