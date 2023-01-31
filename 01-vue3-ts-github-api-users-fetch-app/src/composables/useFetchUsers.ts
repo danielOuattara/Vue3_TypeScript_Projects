@@ -9,7 +9,8 @@ function useFetchUsers() {
         users: Array as PropType<User[]>,
         // url: "https://api.github.com/users",
     });
-    const url = "http://localhost:8000/users";
+    // const url = "http://localhost:8000/users";
+    const url = "https://api.github.com/users";
 
     //--------------------------------------
     async function fetchUsers() {
