@@ -1,4 +1,4 @@
-interface User {
+interface Users {
     login: string,
     id: number | string,
     node_id: string,
@@ -20,4 +20,4 @@ interface User {
 }
 
 
-export default User
+export default Users
