@@ -5,12 +5,12 @@
     v-if="!isLoading && !isError && tours.length === 0"
     :fetchTours="fetchTours"
   />
-  <!-- <AllTours
+  <AllTours
     v-if="!isError && !isLoading && tours.length >= 1"
     :tours="tours"
     @removeTour="removeTourItem"
-  /> -->
-  <AllTours v-if="!isError && !isLoading && tours.length >= 1" :tours="tours" />
+  />
+  <!-- <AllTours v-if="!isError && !isLoading && tours.length >= 1" :tours="tours" /> -->
 </template>
 
 <script lang="ts">
@@ -20,6 +20,7 @@ import ResetTours from "./components/ResetTours.vue";
 import AllTours from "./components/AllTours.vue";
 import { defineComponent, onBeforeMount } from "vue";
 import useFetchTours from "./composables/useFetchTours";
+import Tour from "./types/Tour";
 
 export default defineComponent({
   name: "App",
@@ -27,12 +28,13 @@ export default defineComponent({
   setup() {
     const { isLoading, isError, errorMessage, tours, fetchTours } =
       useFetchTours();
-    // console.log("tours = ", tours);
+    console.log("tours = ", tours);
+    console.log("isLoading = ", isLoading);
 
-    // function removeTourItem(id: string) {
-    //   // TODO: finish typescript type declaration for 'tour.value' and 'item'
-    //   return (tours.value = tours.value.filter((item) => item.id !== id));
-    // }
+    function removeTourItem(id: string) {
+      // TODO: finish typescript type declaration for 'tour.value' and 'item'
+      return tours.filter((item: Tour) => item.id !== id);
+    }
 
     onBeforeMount(fetchTours);
 
@@ -42,7 +44,7 @@ export default defineComponent({
       errorMessage,
       tours,
       fetchTours,
-      // removeTourItem,
+      removeTourItem,
     };
   },
 });

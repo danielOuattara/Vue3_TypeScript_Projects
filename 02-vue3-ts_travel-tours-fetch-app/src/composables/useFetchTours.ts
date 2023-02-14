@@ -1,7 +1,6 @@
 import { reactive, toRefs, PropType } from "vue";
 import Tour from "./../types/Tour";
 
-
 function useFetchTours() {
   const state = reactive({
     isLoading: true,
