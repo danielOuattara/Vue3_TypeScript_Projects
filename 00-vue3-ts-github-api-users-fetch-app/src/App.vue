@@ -15,6 +15,7 @@ import UsersList from "./components/UsersList.vue";
 import SingleUser from "./components/SingleUser.vue";
 import useFetchUsers from "./composables/useFetchUsers";
 import useFetchSingleUser from "./composables/useFetchSingleUser";
+
 export default defineComponent({
   name: "App",
   components: { UsersList, SingleUser },
