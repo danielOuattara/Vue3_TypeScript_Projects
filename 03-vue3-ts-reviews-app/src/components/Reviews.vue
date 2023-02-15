@@ -33,9 +33,10 @@
   </article>
 </template>
 <script lang="ts">
-import { defineComponent, ref, PropType } from "vue";
+import { defineComponent, ref } from "vue";
 import reviews from "./../data";
 import ReviewInterface from "./../types/ReviewInterface";
+
 export default defineComponent({
   setup() {
     const index = ref(0);
