@@ -3,7 +3,7 @@
     <header>
       <h4>{{ singleQuestion.title }}</h4>
       <button className="btn" @click="toggleShowAnswer">
-        {{ this.showAnswer ? "-" : "+" }}
+        {{ showAnswer ? "-" : "+" }}
       </button>
     </header>
     <p v-if="showAnswer">{{ singleQuestion.info }}</p>
