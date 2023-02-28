@@ -17,13 +17,13 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import People from "./../types/People";
+import PeopleType from "../types/PeopleType";
 
 export default defineComponent({
   props: {
     people: {
       required: true,
-      type: Array as PropType<People[]>,
+      type: Array as PropType<PeopleType[]>,
     },
   },
 });

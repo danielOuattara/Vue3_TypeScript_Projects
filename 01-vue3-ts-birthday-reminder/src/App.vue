@@ -15,18 +15,18 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import data from "./data";
-import People from "./types/People";
+import PeopleType from "./types/PeopleType";
 import List from "./components/List.vue";
 
 export default defineComponent({
   name: "App",
   components: { List },
   setup() {
-    const people = ref<People[]>(data);
+    const people = ref<PeopleType[]>(data);
 
     function handleRemoveOnePerson(id: string) {
       return (people.value = people.value.filter(
-        (person: People) => person.id != id,
+        (person: PeopleType) => person.id != id,
       ));
     }
 
