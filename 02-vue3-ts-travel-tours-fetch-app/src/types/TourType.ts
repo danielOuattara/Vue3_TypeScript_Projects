@@ -1,4 +1,4 @@
-interface Tour {
+interface TourType {
   id: string;
   name: string;
   info: string;
@@ -6,4 +6,4 @@ interface Tour {
   price: number;
 }
 
-export default Tour;
+export default TourType;
