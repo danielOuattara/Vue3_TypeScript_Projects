@@ -31,7 +31,6 @@ export default defineComponent({
     }
 
     function handleEmpty() {
-      console.log("empty");
       people.value = [];
     }
 

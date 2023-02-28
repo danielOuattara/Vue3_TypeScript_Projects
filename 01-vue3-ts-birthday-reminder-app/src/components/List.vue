@@ -26,5 +26,6 @@ export default defineComponent({
       type: Array as PropType<PeopleType[]>,
     },
   },
+  emits: ["close"],
 });
 </script>
