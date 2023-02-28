@@ -1,4 +1,4 @@
-import User from "types/User";
+import UserType from "types/UserType";
 import { PropType, reactive, toRefs } from "vue";
 
 function useFetchUsers() {
@@ -6,7 +6,7 @@ function useFetchUsers() {
     isLoading: true,
     isError: false,
     errorMessage: "",
-    users: Array as PropType<User[]>,
+    users: Array as PropType<UserType[]>,
   });
 
   const url = "https://api.github.com/users";
