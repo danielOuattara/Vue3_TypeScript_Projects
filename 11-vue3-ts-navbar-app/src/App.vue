@@ -1,11 +1,21 @@
-<template></template>
+<template>
+  <b
+    ><p :style="{ marginLeft: '5rem' }">
+      composition API vue3 + typescript solution
+    </p></b
+  >
+  <Navbar />
+</template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Navbar from "./components/Navbar.vue";
 
 export default defineComponent({
   name: "App",
-  components: {},
+  components: {
+    Navbar,
+  },
 });
 </script>
 
