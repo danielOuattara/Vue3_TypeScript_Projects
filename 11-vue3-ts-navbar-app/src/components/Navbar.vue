@@ -45,18 +45,17 @@ composition API + typescript solution
   </nav>
 </template>
 
-<script>
+<script lang="ts">
 import { links, social } from "./../data";
-import logo from "./../logo.svg";
-import { ref, watch, defineComponent } from "vue";
+import { ref, watch, defineComponent, Ref } from "vue";
 
 export default defineComponent({
   name: "Navbar",
   components: {},
   setup() {
     const linksContainerRef = ref(null);
-    const linksRef = ref(null);
-    const imageLogo = ref(logo);
+    const linksRef: Ref<null | object> = ref(null);
+    const imageLogo = require("./../assets/logo.svg");
     const showLinks = ref(false);
     const linksList = ref(links);
     const socialLinks = ref(social);
@@ -67,11 +66,11 @@ export default defineComponent({
     watch(
       () => showLinks.value,
       (newValue, oldValue) => {
-        const linksHeight = linksRef.value.getBoundingClientRect();
+        const linksHeight = linksRef.value?.getBoundingClientRect();
         if (newValue !== oldValue) {
-          if (showLinks.value) {
+          if (showLinks.value && linksContainerRef.value) {
             linksContainerRef.value.style.height = `${linksHeight.height}px`;
-          } else {
+          } else if (linksContainerRef.value) {
             linksContainerRef.value.style.height = "0px";
           }
         }
@@ -87,19 +86,6 @@ export default defineComponent({
       socialLinks,
       toggleShowLinks,
     };
-  },
-
-  watch: {
-    showLinks(newValue, oldValue) {
-      const linksHeight = this.$refs.linksRef.getBoundingClientRect();
-      if (newValue !== oldValue) {
-        if (this.showLinks) {
-          this.$refs.linksContainerRef.style.height = `${linksHeight.height}px`;
-        } else {
-          this.$refs.linksContainerRef.style.height = "0px";
-        }
-      }
-    },
   },
 });
 </script>
