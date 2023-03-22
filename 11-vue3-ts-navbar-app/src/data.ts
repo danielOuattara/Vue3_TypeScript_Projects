@@ -26,29 +26,6 @@ export const links = [
   },
 ];
 
-// export const social = [
-//   {
-//     id: 1,
-//     url: "https://www.twitter.com",
-//     icon: <font-awesome-icon icon="fa-brands fa-facebook" />,
-//   },
-//   {
-//     id: 2,
-//     url: "https://www.twitter.com",
-//     icon: <font-awesome-icon icon="fa-brands fa-twitter" />,
-//   },
-//   {
-//     id: 3,
-//     url: "https://www.twitter.com",
-//     icon: <font-awesome-icon icon="fa-brands fa-linkedin" />,
-//   },
-//   {
-//     id: 4,
-//     url: "https://www.twitter.com",
-//     icon: <font-awesome-icon icon="fa-brands fa-behance" />,
-//   },
-// ];
-
 export const social = [
   {
     id: 1,
